@@ -18,7 +18,7 @@ const guessNum = () => {
     }
 
     // rejected if the input value is out of the guessing range
-    if (user_guess <= min_guessed_num || user_guess >= max_guessed_num) {
+    if (user_guess < min_guessed_num || user_guess > max_guessed_num) {
         alert(`Please enter a number between ${min_guessed_num} and ${max_guessed_num}.`)
     }
     else {
@@ -62,6 +62,7 @@ const replayOption = () => {
         window.location.reload()  // Reload
     } else {
         alert("Trash game, bye!")
+        window.open('', '_self', ''); //bug fix
         window.close()  // Close
     }
 }
